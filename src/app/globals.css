@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary : #171717;
+  --text-primary : #000;
+  --text-secondary : #a1a1aa;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.image-wrapper {
+  background: #ccd5aeff;
+
+  border-radius: 40% 60% 55% 45% / 45% 35% 65% 55%;
+
+  overflow: hidden;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-wrapper img {
+  width: 120%;
+  height: 120%;
+  object-fit: cover;
+}
+
+.backgroun-image{
+  baground-image: url('/assets/images/bg.png');
+}
+
+.change-color:hover{
+  background-color: var(--color-tea-green);
+}
+
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      #8b7355 0px,
+      #8b7355 4px,
+      transparent 4px,
+      transparent 16px
+    );
+}
